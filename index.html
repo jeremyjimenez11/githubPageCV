@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="imgPerfil.jpeg" alt="Jeremy Jimenez" width="300" height="300"/>
+
+    <h3>Jeremy Jimenez</h3>
+    <h4>Estudiante de Ingenieria de Software</h4>
+    
+    <div class="filter_container">
+
+            <p><a href="#personal" data-filter active= "personal">Información Personal</a></p>
+            <p><a href="#experience" data-filter = "experience">Experiencia Laboral</a></p>
+            <p><a href="#portfolio" data-filter = "portfolio">Portafolio</a></p>
+            <p><a href="#contact" data-filter = "contact">Contacto</a></p>
+    </div>
+    <section id="personal">
+        <fieldset> 
+            <legend><h2>Sobre Mi</h2></legend>
+        <p>Soy estudiante de Ingeniería de Software, me apasiona dedicar mi energía a proyectos y actividades que realmente encajan con mis intereses profesionales. Uno de mis principales objetivos este año es alcanzar la excelencia y el máximo nivel de competencia en las actividades a las que me dedico. Este compromiso ha influido de manera significativa en mi toma de decisiones y en mi rutina diaria, lo que me ha permitido cultivar un alto grado de disciplina que sirve de puente entre mi trayectoria académica y mi crecimiento personal.</p>
+        <p>Aunque, por naturaleza, me inclino por un estilo de comunicación más centrado y reflexivo, he demostrado en todo momento una gran aptitud para ofrecer una experiencia excepcional a los clientes y gestionar las relaciones con ellos con gran eficacia.</p>
+        </fieldset>
+    </section>
+
+    <section id="experience">
+        <fieldset>
+            <legend><h2>Experiencia laboral</h2></legend>
+            <ul>
+                <li>Servicio tecnico y atencion en facultad de ingeniera en sistemas </li>
+                <li>Apoyo en negocio familiar</li>
+                <li>Servicio al cliente en complejo Termales Jamanco</li>
+                <li>Desarrollo de agente personal construido en java</li>
+            </ul>
+            <p></p>
+        </fieldset>
+    </section>
+
+    <section id="portfolio">
+        <fieldset>
+            <legend><h2>Portafolio</h2></legend>
+                <ul>
+                    <li>Desarrollo de una aplicacion que funciona en base a comandos de voz en Java.</li>
+                    <li>Diseño de logotipos y publicidad para evento VOCES 2026 </li>
+
+                </ul>
+        </fieldset>
+    </section>
+
+    <section id = "contact">
+        <form action="">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" id="nombre" 
+            placeholder="Ingrese su nombre" required><br>
+            <label for="email">Correo:</label><br>
+            <input type="email" name="email" placeholder="example@epn.edu.ec" required> <br>
+            <label for="telefono">Telefono:</label><br>
+            <input type="tel" name="telefono" pattern="[9876][0-9]{8}" required>
+
+            <br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+                
+                
+</body>
+</html>
