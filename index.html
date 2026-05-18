@@ -1,71 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jeremy Jimenez - Currículum</title>
+    <link rel="stylesheet" href="curriculum-styles.css">
 </head>
 <body>
-    <img src="imgPerfil.jpeg" alt="Jeremy Jimenez" width="300" height="300"/>
+    <div class="contenedor-principal">
+        <!-- Encabezado -->
+        <header class="encabezado">
+            <img src="imgPerfil.jpeg" alt="Jeremy Jimenez" class="foto-perfil"/>
+            <div class="info-principal">
+                <h1>Jeremy Jimenez</h1>
+                <p class="subtitulo">Estudiante de Ingeniería de Software</p>
+            </div>
+        </header>
 
-    <h3>Jeremy Jimenez</h3>
-    <h4>Estudiante de Ingenieria de Software</h4>
-    
-    <div class="filter_container">
+        <!-- Navegación -->
+        <nav class="navegacion">
+            <a href="#personal" class="nav-link activo">Información Personal</a>
+            <a href="#experience" class="nav-link">Experiencia Laboral</a>
+            <a href="#portfolio" class="nav-link">Portafolio</a>
+            <a href="#contact" class="nav-link">Contacto</a>
+        </nav>
 
-            <p><a href="#personal" data-filter active= "personal">Información Personal</a></p>
-            <p><a href="#experience" data-filter = "experience">Experiencia Laboral</a></p>
-            <p><a href="#portfolio" data-filter = "portfolio">Portafolio</a></p>
-            <p><a href="#contact" data-filter = "contact">Contacto</a></p>
-    </div>
-    <section id="personal">
-        <fieldset> 
-            <legend><h2>Sobre Mi</h2></legend>
-        <p>Soy estudiante de Ingeniería de Software, me apasiona dedicar mi energía a proyectos y actividades que realmente encajan con mis intereses profesionales. Uno de mis principales objetivos este año es alcanzar la excelencia y el máximo nivel de competencia en las actividades a las que me dedico. Este compromiso ha influido de manera significativa en mi toma de decisiones y en mi rutina diaria, lo que me ha permitido cultivar un alto grado de disciplina que sirve de puente entre mi trayectoria académica y mi crecimiento personal.</p>
-        <p>Aunque, por naturaleza, me inclino por un estilo de comunicación más centrado y reflexivo, he demostrado en todo momento una gran aptitud para ofrecer una experiencia excepcional a los clientes y gestionar las relaciones con ellos con gran eficacia.</p>
-        </fieldset>
-    </section>
+        <!-- Sección Personal -->
+        <section id="personal" class="seccion">
+            <div class="seccion-contenido">
+                <h2 class="titulo-seccion">Sobre Mí</h2>
+                <p>Soy estudiante de Ingeniería de Software, me apasiona dedicar mi energía a proyectos y actividades que realmente encajan con mis intereses profesionales. Uno de mis principales objetivos este año es alcanzar la excelencia y el máximo nivel de competencia en las actividades a las que me dedico. Este compromiso ha influido de manera significativa en mi toma de decisiones y en mi rutina diaria, lo que me ha permitido cultivar un alto grado de disciplina que sirve de puente entre mi trayectoria académica y mi crecimiento personal.</p>
+                <p>Aunque, por naturaleza, me inclino por un estilo de comunicación más centrado y reflexivo, he demostrado en todo momento una gran aptitud para ofrecer una experiencia excepcional a los clientes y gestionar las relaciones con ellos con gran eficacia.</p>
+            </div>
+        </section>
 
-    <section id="experience">
-        <fieldset>
-            <legend><h2>Experiencia laboral</h2></legend>
-            <ul>
-                <li>Servicio tecnico y atencion en facultad de ingeniera en sistemas </li>
-                <li>Apoyo en negocio familiar</li>
-                <li>Servicio al cliente en complejo Termales Jamanco</li>
-                <li>Desarrollo de agente personal construido en java</li>
-            </ul>
-            <p></p>
-        </fieldset>
-    </section>
-
-    <section id="portfolio">
-        <fieldset>
-            <legend><h2>Portafolio</h2></legend>
-                <ul>
-                    <li>Desarrollo de una aplicacion que funciona en base a comandos de voz en Java.</li>
-                    <li>Diseño de logotipos y publicidad para evento VOCES 2026 </li>
-
+        <!-- Sección Experiencia -->
+        <section id="experience" class="seccion">
+            <div class="seccion-contenido">
+                <h2 class="titulo-seccion">Experiencia Laboral</h2>
+                <ul class="lista-experiencia">
+                    <li class="item-experiencia">
+                        <span class="bullet">●</span>
+                        <p>Servicio técnico y atención en Facultad de Ingeniería en Sistemas</p>
+                    </li>
+                    <li class="item-experiencia">
+                        <span class="bullet">●</span>
+                        <p>Apoyo en negocio familiar</p>
+                    </li>
+                    <li class="item-experiencia">
+                        <span class="bullet">●</span>
+                        <p>Servicio al cliente en Complejo Termales Jamanco</p>
+                    </li>
+                    <li class="item-experiencia">
+                        <span class="bullet">●</span>
+                        <p>Desarrollo de agente personal construido en Java</p>
+                    </li>
                 </ul>
-        </fieldset>
-    </section>
+            </div>
+        </section>
 
-    <section id = "contact">
-        <form action="">
-            <br>
-            <label for="nombre">Nombre:</label><br>
-            <input type="text" name="nombre" id="nombre" 
-            placeholder="Ingrese su nombre" required><br>
-            <label for="email">Correo:</label><br>
-            <input type="email" name="email" placeholder="example@mail.com" required> <br>
-            <label for="telefono">Telefono:</label><br>
-            <input type="tel" name="telefono" pattern="[9876][0-9]{8}" required>
+        <!-- Sección Portafolio -->
+        <section id="portfolio" class="seccion">
+            <div class="seccion-contenido">
+                <h2 class="titulo-seccion">Portafolio</h2>
+                <ul class="lista-portfolio">
+                    <li class="item-portfolio">
+                        <span class="bullet">●</span>
+                        <p>Desarrollo de una aplicación que funciona en base a comandos de voz en Java</p>
+                    </li>
+                    <li class="item-portfolio">
+                        <span class="bullet">●</span>
+                        <p>Diseño de logotipos y publicidad para evento VOCES 2026</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-            <br><br>
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
-                
-                
+        <!-- Sección Contacto -->
+        <section id="contact" class="seccion">
+            <div class="seccion-contenido">
+                <h2 class="titulo-seccion">Contacto</h2>
+                <form class="formulario-contacto" action="">
+                    <div class="grupo-formulario">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="nombre" 
+                        placeholder="Ingrese su nombre" required>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="email">Correo:</label>
+                        <input type="email" name="email" id="email"
+                        placeholder="example@mail.com" required>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" name="telefono" id="telefono"
+                        pattern="[9876][0-9]{8}" placeholder="Ej: 0912345678" required>
+                    </div>
+
+                    <button type="submit" class="boton-enviar">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
