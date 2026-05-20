@@ -1,0 +1,144 @@
+:root{
+    /*colores de paleta*/
+    --color-one:#209dc7;
+    --color-two: hsl(40, 97%, 50%);
+    --color-three:#EEE;
+    --color-four: #F2F6F6;
+
+    /*color de texto*/
+    --color-five: #9E9A9A;
+    --color-six: #000000;
+    --color-seven: #FFFFFF;
+
+    --font-principal: 'Verdana', sans-serif;
+    --font-secundaria: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+    --font-ejemplo: 400 46px 'Inter', sans-serif;
+
+    --font-bold: bold;
+    --font-regular: normal;
+    --font-semibold: 700;
+    
+    --titulo1-size: 46px;
+    --titulo2-size: 32px;
+    --miniatura-size: 14px;
+    --menu-size: 16px;
+    --normal-size: 1em ;
+    --descripcion-size: 0.8em;
+
+    --bordes-curvas1: 25px;
+    --bordes-curvas2: 15px 15px 0px 0px;
+
+    --borde-circular: 4px;
+
+    --circunferencia-interna: 200px;
+    --circunferencia-externa: 200px;
+}
+
+/* Botón base que ya incluye tu fuente y transiciones */
+.btn {
+    font: var(--font-regular) var(--normal-size) var(--font-principal);
+    border-radius: var(--bordes-curvas1);/* Un padding más equilibrado horizontalmente */
+    border: none;
+    cursor: pointer;
+}
+
+/* Variantes de color para el botón */
+.btn-primary {
+    background-color: var(--color-one);
+    color: var(--color-six);
+}
+
+.navbar-container{
+    padding:20px;
+    /* display: flex;
+    justify-content: space-evenly;
+    
+    /*alinear horizontal
+    align-items: center;
+    */
+}
+.navbar-container a{
+    padding: 35px 0px 35px 70px;
+}
+
+/* ================= Bloque contenedor base para las secciones ================= */
+.section-block-1{
+    width: 100%;
+    /* padding: 21em ;  */
+}
+
+.section-block-2 {
+    width: 100%;
+    /* padding: 15em;  */
+}
+.section-block-3 {
+    width: 100%;
+    /* padding: 15em;  */
+}
+
+/*================= disposicion de items en la pagina ================= */
+/* base flex */
+.d-flex { display: flex; }
+
+/* Direcciones */
+.flex-row { flex-direction: row; }
+.flex-col { flex-direction: column; } /* ¡Crucial para layouts verticales! */
+
+/* Alineaciones */
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.justify-evenly { justify-content: space-evenly; }
+.justify-center { justify-content: center; }
+
+.align-center { align-items: center; }
+.align-start { align-items: start; }
+.align-right { align-items: right; }
+.align-left { align-items: left; }
+.flex-start{ align-items: flex-start; }
+
+/* Separaciones predefinidas */
+.gap-1 { gap: 10px; }
+.gap-2 { gap: 20px; }
+
+.padding-1{ padding: 10px}
+.padding-2{ padding: 30px}
+.padding-section{ padding: 12px}
+
+
+/*=================fonts aplicables=================*/
+
+.font-titulo1{ font: var(--font-bold) var(--normal-size) var(--font-principal);}
+.font-titulo2{ font: var(--font-semibold) var(--titulo2-size) var(--font-principal);}
+.font-parrafo{ font: var(--font-regular) var(--normal-size) var(--font-principal);}
+.font-descripcion{ font: var(--font-regular) var(--descripcion-size) var(--font-principal);}
+.font-nombres{ font: var(--font-bold) var(--normal-size) var(--font-principal);}
+.font-btn{ font: var(--font-regular) var(--normal-size) var(--font-principal);}
+
+.font-pg{font-family: var(--font-principal) ;}
+
+/*=================colores fondo y formas=================*/
+
+.color-one{ background-color: var(--color-one);}
+.color-two{ background-color: var(--color-two);}
+.color-three{ background-color: var(--color-three);}
+.color-four{ background-color: var(--color-four);}
+.color-black{ background-color: var(--color-six);}
+.color-white{ background-color: var(--color-seven);}
+
+/*=================colores texto=================*/
+.texto-black{ color: var(--color-six);}
+.texto-orange{ color: var(--color-two);}
+.texto-white{ color: var(--color-seven);}
+.texto-grey{color: var(--color-five);}
+.texto-blue{color: var(--color-one);}
+
+
+.iconoCircular{
+    width: var(--circunferencia-externa);
+    height: var(--circunferencia-externa);
+    border: var(--borde-circular) solid var(--color-two);
+    border-radius: 50%;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
