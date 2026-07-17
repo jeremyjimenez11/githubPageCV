@@ -7,7 +7,7 @@ import modelo.entities.Persona;
 
 public class PersonaDAO {
 	
-	public static List<Persona> personas; 
+	public static List<Persona> personas = new ArrayList<>(); 
 	
 	public void create(Persona p) {
 		personas.add(p);
@@ -43,9 +43,9 @@ public class PersonaDAO {
 	}
 	
 	public List<Persona> getAll() {
-		if (personas == null) {
+		if (personas.isEmpty()) {
 			personas.add(new Persona(1, "Juan Perez", "1234567890", 30));
-			personas.add(new Persona(1, "Juan Lopez", "0123654789", 20));
+			personas.add(new Persona(2, "Juan Lopez", "0123654789", 20));
 			
 		}
 		return personas;
