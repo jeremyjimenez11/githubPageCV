@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de Jeremy Anderson Jiménez González, estudiante de Ingeniería en Software en la Escuela Politécnica Nacional.">
+  <meta name="theme-color" content="#111827">
+  <title>Jeremy Jiménez | Ingeniería en Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+  <header class="site-header" id="inicio">
+    <div class="container nav-wrap">
+      <a class="brand" href="#perfil" aria-label="Jeremy Jiménez, ir al perfil">
+        <span class="brand-mark" aria-hidden="true">JJ</span>
+        <span class="brand-copy"><strong>Jeremy Jiménez</strong><small>Software Eng.</small></span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Abrir menú de navegación</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Navegación principal">
+        <a href="#perfil" class="nav-link active" aria-current="location">Perfil</a>
+        <a href="#experiencia" class="nav-link">Experiencia</a>
+        <a href="#proyectos" class="nav-link">Proyectos</a>
+        <a href="#habilidades" class="nav-link">Habilidades</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero section" id="perfil" aria-labelledby="hero-title">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Ruta de navegación">
+          <a href="#inicio">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Perfil</span>
+        </nav>
+        <div class="hero-grid">
+          <div class="hero-photo-wrap">
+            <img class="hero-photo" src="1000132390.jpg" alt="Fotografía de Jeremy Anderson Jiménez González" width="420" height="520">
+            <div class="photo-caption"><span class="status-dot" aria-hidden="true"></span> Ingeniería en Software · EPN</div>
+          </div>
+          <div class="hero-content">
+            <p class="eyebrow">PORTAFOLIO PERSONAL <span></span> QUITO, ECUADOR</p>
+            <h1 id="hero-title">Jeremy Anderson<br><span>Jiménez González</span></h1>
+            <p class="hero-role">Estudiante de 7.º semestre de Ingeniería en Software</p>
+            <p class="hero-bio">Desarrollador enfocado en la construcción de software bajo arquitectura MVC y patrones robustos en Java. Con experiencia aplicada en soporte técnico, metodologías ágiles y estándares de calidad de software.</p>
+            <div class="hero-meta">
+              <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 5.5h16v13H4zM8 3v5m8-5v5M4 10h16"/></svg> Escuela Politécnica Nacional</span>
+              <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.2"/></svg> Quito, Ecuador</span>
+            </div>
+            <div class="hero-actions">
+              <a class="button button-dark" href="#contacto">Contacto directo <span aria-hidden="true">↗</span></a>
+              <a class="button button-outline" href="#proyectos">Ver proyectos <span aria-hidden="true">↓</span></a>
+            </div>
+            <p class="hero-note">Facultad de Ingeniería de Sistemas (FIS)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="experiencia" aria-labelledby="experience-title">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="#inicio">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Experiencia</span></nav>
+        <div class="section-heading">
+          <p class="eyebrow">TRAYECTORIA</p>
+          <h2 id="experience-title">Experiencia y soporte técnico</h2>
+          <p>Experiencia práctica en asistencia, atención a personas y gestión operativa.</p>
+        </div>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-index">01</div>
+            <div class="experience-body">
+              <p class="card-kicker">SOPORTE TÉCNICO · EDUCACIÓN</p>
+              <h3>Servicio Técnico y Atención a Usuarios</h3>
+              <p class="organization">Facultad de Ingeniería de Sistemas (FIS) · EPN</p>
+              <p>Soporte técnico directo, mantenimiento de equipos y asistencia a usuarios en laboratorios. Atención de incidencias y apoyo para mantener los recursos tecnológicos disponibles.</p>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="experience-card">
+            <div class="experience-index">02</div>
+            <div class="experience-body">
+              <p class="card-kicker">ATENCIÓN AL CLIENTE · OPERACIONES</p>
+              <h3>Servicio al Cliente y Gestión Operativa</h3>
+              <p class="organization">Complejo Termales Jamanco y negocio familiar</p>
+              <p>Atención al público, resolución de requerimientos y gestión de relaciones interpersonales, con énfasis en la comunicación y la organización del trabajo cotidiano.</p>
+            </div>
+            <span class="card-arrow" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos" aria-labelledby="projects-title">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="#inicio">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Proyectos</span></nav>
+        <div class="section-heading section-heading-row">
+          <div><p class="eyebrow">TRABAJO SELECCIONADO</p><h2 id="projects-title">Proyectos</h2><p>Una selección de desarrollos, modelado de procesos y diseño.</p></div>
+          <span class="project-count" id="project-count" aria-live="polite">5 proyectos</span>
+        </div>
+        <div class="filter-bar" role="group" aria-label="Filtrar proyectos por categoría">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">Todos <span>05</span></button>
+          <button class="filter-button" type="button" data-filter="java" aria-pressed="false">Java / Arquitectura</button>
+          <button class="filter-button" type="button" data-filter="management" aria-pressed="false">Gestión &amp; BPMN</button>
+          <button class="filter-button" type="button" data-filter="design" aria-pressed="false">Diseño</button>
+        </div>
+        <div class="projects-grid" id="projects-grid">
+          <article class="project-card" data-category="java">
+            <div class="project-visual visual-java"><span class="visual-label">JAVA</span><div class="code-window" aria-hidden="true"><i></i><i></i><i></i><div class="code-line long"></div><div class="code-line medium"></div><div class="code-line short"></div><div class="code-line long"></div></div></div>
+            <div class="project-content"><div class="project-meta"><span>01 / DESARROLLO</span><span class="project-type">Java</span></div><h3>Aplicación con Comandos de Voz</h3><p>Aplicación en Java orientada al reconocimiento de voz y a la interacción mediante comandos.</p><div class="tag-list"><span>Java</span><span>Reconocimiento de voz</span></div></div>
+          </article>
+          <article class="project-card" data-category="java">
+            <div class="project-visual visual-agent"><span class="visual-label">AGENT SYSTEM</span><div class="agent-orbit" aria-hidden="true"><span>J</span><i></i><i></i><i></i></div></div>
+            <div class="project-content"><div class="project-meta"><span>02 / DESARROLLO</span><span class="project-type">Java</span></div><h3>Agente Personal en Java</h3><p>Proyecto enfocado en la lógica de un agente personal y la organización de sus acciones.</p><div class="tag-list"><span>Java</span><span>Agentes</span></div></div>
+          </article>
+          <article class="project-card" data-category="management">
+            <div class="project-visual visual-bpmn"><span class="visual-label">MODELADO DE PROCESOS</span><div class="process-flow" aria-hidden="true"><span></span><b></b><span></span><b></b><span></span></div></div>
+            <div class="project-content"><div class="project-meta"><span>03 / ANÁLISIS</span><span class="project-type">BPMN 2.0</span></div><h3>Gestión para Dark Kitchens</h3><p>Levantamiento de requerimientos y modelado de procesos para un sistema de gestión de cocinas ocultas.</p><div class="tag-list"><span>BPMN 2.0</span><span>PlantUML</span><span>Requerimientos</span></div></div>
+          </article>
+          <article class="project-card" data-category="management">
+            <div class="project-visual visual-config"><span class="visual-label">CONFIGURATION MANAGEMENT</span><div class="config-stack" aria-hidden="true"><span>IEEE 828</span><span>ISO 12207</span><span>CMMI</span></div></div>
+            <div class="project-content"><div class="project-meta"><span>04 / CALIDAD</span><span class="project-type">Estándares</span></div><h3>Gestión de Configuración — EPN Event Manager</h3><p>Trabajo académico sobre gestión de configuración de software y aplicación de marcos y estándares de calidad.</p><div class="tag-list"><span>IEEE 828</span><span>ISO/IEC 12207</span><span>CMMI</span></div></div>
+          </article>
+          <article class="project-card" data-category="design">
+            <div class="project-visual visual-design"><span class="visual-label">VOCES 2026</span><div class="design-poster" aria-hidden="true"><small>EVENTO</small><strong>VO<br>CES</strong><span>IDENTIDAD GRÁFICA</span></div></div>
+            <div class="project-content"><div class="project-meta"><span>05 / DISEÑO</span><span class="project-type">Multimedia</span></div><h3>Identidad Gráfica — Evento VOCES 2026</h3><p>Propuesta de identidad visual para un evento, con enfoque en diseño multimedia y publicidad.</p><div class="tag-list"><span>Identidad gráfica</span><span>Diseño multimedia</span><span>Publicidad</span></div></div>
+          </article>
+        </div>
+        <p class="empty-state" id="empty-state" hidden>No hay proyectos en esta categoría.</p>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="habilidades" aria-labelledby="skills-title">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="#inicio">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Habilidades</span></nav>
+        <div class="section-heading"><p class="eyebrow">CONOCIMIENTOS</p><h2 id="skills-title">Habilidades técnicas</h2><p>Herramientas y fundamentos que aplico en proyectos académicos y prácticos.</p></div>
+        <div class="skills-grid">
+          <article class="skill-card"><div class="skill-icon" aria-hidden="true">01</div><h3>Desarrollo y lenguajes</h3><p>Construcción de aplicaciones y organización de componentes.</p><ul><li>Java: Servlets y JSP</li><li>Arquitectura monolítica y patrón MVC</li><li>SQL y bases de datos distribuidas</li></ul></article>
+          <article class="skill-card"><div class="skill-icon" aria-hidden="true">02</div><h3>Modelado y estándares</h3><p>Representación de sistemas y documentación de calidad.</p><ul><li>PlantUML: casos de uso y dominio</li><li>BPMN 2.0 (XML)</li><li>IEEE 828, ISO/IEC 12207 y CMMI</li></ul></article>
+          <article class="skill-card"><div class="skill-icon" aria-hidden="true">03</div><h3>Metodologías y herramientas</h3><p>Prácticas para colaborar, organizar y mantener software.</p><ul><li>Metodologías ágiles (Scrum)</li><li>Git y control de versiones</li><li>Soporte técnico y atención a usuarios</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Ruta de navegación"><a href="#inicio">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Contacto</span></nav>
+        <div class="contact-panel">
+          <div><p class="eyebrow">HABLEMOS</p><h2 id="contact-title">¿Tienes una idea o proyecto?</h2><p>Estoy abierto a conversar sobre desarrollo de software, proyectos académicos y oportunidades para seguir aprendiendo.</p></div>
+          <a class="button button-light" id="whatsapp-link" href="https://wa.me/593912345678?text=Hola%20Jeremy%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20contigo." target="_blank" rel="noopener noreferrer">Contactar por WhatsApp <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="contact-note">El enlace abrirá WhatsApp con un mensaje sugerido que puedes editar antes de enviarlo.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><a class="footer-brand" href="#perfil">Jeremy Jiménez</a><p>Ingeniería en Software · Escuela Politécnica Nacional</p></div>
+      <div class="footer-right"><span>© <span id="current-year">2026</span> · Quito, Ecuador</span><a href="#inicio">Volver arriba ↑</a></div>
+    </div>
+  </footer>
+
+  <a class="back-to-top" id="back-to-top" href="#inicio" aria-label="Volver arriba" title="Volver arriba">↑</a>
+</body>
+</html>

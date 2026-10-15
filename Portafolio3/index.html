@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jeremy Jiménez | Portafolio de Ingeniería en Software</title>
+  <meta name="description" content="Portafolio de Jeremy Anderson Jiménez González, estudiante de Ingeniería en Software en la EPN: proyectos en Java, modelado BPMN y estándares de calidad.">
+  <meta name="theme-color" content="#1F2937">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+
+  <!-- Visibilidad del estado: barra de progreso de scroll -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__bar" id="progressBar"></div>
+  </div>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header__bar">
+      <a class="brand" href="#perfil" id="inicio" data-scroll-top>
+        Jeremy Jiménez <span class="brand__role">/ Software Eng.</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button"
+              aria-expanded="false" aria-controls="mainNav">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span id="menuToggleLabel">Menú</span>
+      </button>
+
+      <nav class="nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Control y libertad: pan de azúcar -->
+    <div class="breadcrumb-bar">
+      <div class="container">
+        <nav aria-label="Ruta de navegación">
+          <ol class="breadcrumb">
+            <li><a href="#perfil" data-scroll-top>Inicio</a></li>
+            <li><span id="breadcrumbCurrent" aria-current="page">Perfil</span></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+
+    <!-- PERFIL -->
+    <section class="hero" id="perfil" aria-labelledby="perfil-titulo">
+      <div class="container hero__grid">
+        <div class="hero__photo" id="heroPhoto">
+          <img id="profilePhoto" src="1000132390.jpg" width="340" height="425"
+               alt="Fotografía de perfil de Jeremy Anderson Jiménez González">
+          <span class="hero__photo-fallback" aria-hidden="true">JJ</span>
+        </div>
+
+        <div class="hero__text">
+          <h1 id="perfil-titulo">Jeremy Anderson Jiménez González</h1>
+          <p class="hero__role">Estudiante de 7.º Semestre de Ingeniería en Software</p>
+          <p class="hero__institution">Escuela Politécnica Nacional (EPN) – Facultad de Ingeniería de Sistemas (FIS), Quito, Ecuador.</p>
+          <p class="hero__bio">Desarrollador enfocado en la construcción de software bajo arquitectura MVC y patrones robustos en Java. Con experiencia aplicada en soporte técnico, metodologías ágiles y estándares de calidad de software.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contacto">Contacto directo</a>
+            <a class="btn btn--secondary" href="#proyectos">Ver proyectos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="section section--alt" id="experiencia" aria-labelledby="experiencia-titulo">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="experiencia-titulo">Experiencia y soporte técnico</h2>
+          <p>Trabajo directo con usuarios: laboratorios, atención al público y resolución de requerimientos.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h3>Servicio Técnico y Atención a Usuarios</h3>
+            <p class="card__meta">Facultad de Ingeniería de Sistemas (FIS) – EPN</p>
+            <ul class="card__list">
+              <li>Soporte técnico directo</li>
+              <li>Mantenimiento de equipos</li>
+              <li>Asistencia a usuarios en laboratorios</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Servicio al Cliente y Gestión Operativa</h3>
+            <p class="card__meta">Complejo Termales Jamanco y negocio familiar</p>
+            <ul class="card__list">
+              <li>Atención al público</li>
+              <li>Resolución de requerimientos</li>
+              <li>Gestión de relaciones interpersonales</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="section" id="proyectos" aria-labelledby="proyectos-titulo">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="proyectos-titulo">Portafolio de proyectos</h2>
+          <p>Elige una categoría para ver solo los proyectos que te interesan.</p>
+        </div>
+
+        <!-- Reconocer antes que recordar: filtros visibles -->
+        <div class="filters" role="group" aria-label="Filtrar proyectos por categoría">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="filter" type="button" data-filter="java" aria-pressed="false">Java/Arquitectura</button>
+          <button class="filter" type="button" data-filter="gestion" aria-pressed="false">Gestión &amp; BPMN</button>
+          <button class="filter" type="button" data-filter="diseno" aria-pressed="false">Diseño</button>
+        </div>
+        <p class="filter-status" id="filterStatus" aria-live="polite">Mostrando los 5 proyectos</p>
+
+        <div class="grid grid--3" id="projectGrid">
+          <article class="card project" data-category="java">
+            <ul class="chips" aria-label="Tecnologías">
+              <li class="chip">Java</li>
+              <li class="chip">Reconocimiento de voz</li>
+            </ul>
+            <h3>Aplicación con Comandos de Voz en Java</h3>
+            <p>Aplicación en Java que interpreta comandos de voz para ejecutar acciones.</p>
+            <p class="project__category">Categoría: Java/Arquitectura</p>
+          </article>
+
+          <article class="card project" data-category="java">
+            <ul class="chips" aria-label="Tecnologías">
+              <li class="chip">Java</li>
+              <li class="chip">Agentes</li>
+            </ul>
+            <h3>Agente Personal en Java</h3>
+            <p>Agente personal desarrollado en Java que responde a las solicitudes del usuario.</p>
+            <p class="project__category">Categoría: Java/Arquitectura</p>
+          </article>
+
+          <article class="card project" data-category="gestion">
+            <ul class="chips" aria-label="Tecnologías">
+              <li class="chip">BPMN 2.0</li>
+              <li class="chip">PlantUML</li>
+            </ul>
+            <h3>Gestión para Dark Kitchens</h3>
+            <p>Levantamiento de requerimientos y modelado de procesos para una dark kitchen con BPMN 2.0 y PlantUML.</p>
+            <p class="project__category">Categoría: Gestión &amp; BPMN</p>
+          </article>
+
+          <article class="card project" data-category="gestion">
+            <ul class="chips" aria-label="Estándares">
+              <li class="chip">IEEE 828</li>
+              <li class="chip">ISO 12207</li>
+              <li class="chip">CMMI</li>
+            </ul>
+            <h3>Gestión de Configuración – EPN Event Manager</h3>
+            <p>Gestión de configuración del software alineada con IEEE 828, ISO/IEC 12207 y CMMI.</p>
+            <p class="project__category">Categoría: Gestión &amp; BPMN</p>
+          </article>
+
+          <article class="card project" data-category="diseno">
+            <ul class="chips" aria-label="Áreas">
+              <li class="chip">Diseño multimedia</li>
+              <li class="chip">Publicidad</li>
+            </ul>
+            <h3>Identidad Gráfica – Evento VOCES 2026</h3>
+            <p>Diseño de la identidad gráfica y de las piezas publicitarias del evento VOCES 2026.</p>
+            <p class="project__category">Categoría: Diseño</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="section section--alt" id="habilidades" aria-labelledby="habilidades-titulo">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="habilidades-titulo">Habilidades técnicas</h2>
+          <p>Lo que uso para construir, modelar y documentar software.</p>
+        </div>
+
+        <div class="grid grid--3-skills">
+          <article class="card">
+            <h3>Desarrollo y lenguajes</h3>
+            <ul class="chips">
+              <li class="chip">Java (Servlets, JSP)</li>
+              <li class="chip">Arquitectura monolítica y MVC</li>
+              <li class="chip">SQL / Bases de datos distribuidas</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Modelado y estándares</h3>
+            <ul class="chips">
+              <li class="chip">PlantUML (casos de uso, dominio)</li>
+              <li class="chip">BPMN 2.0 (XML)</li>
+              <li class="chip">IEEE 828</li>
+              <li class="chip">ISO/IEC 12207</li>
+              <li class="chip">CMMI</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Metodologías y herramientas</h3>
+            <ul class="chips">
+              <li class="chip">Metodologías ágiles (Scrum)</li>
+              <li class="chip">Git / Control de versiones</li>
+              <li class="chip">Soporte técnico</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="container">
+        <!-- Eficiencia y flexibilidad: un solo paso, sin formulario -->
+        <div class="card contact-card">
+          <h2 id="contacto-titulo">Contacto</h2>
+          <p>Escríbeme directamente por WhatsApp. El mensaje ya viene escrito: solo tienes que enviarlo.</p>
+          <div>
+            <a class="btn btn--primary"
+               href="https://wa.me/593912345678?text=Hola%20Jeremy%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20ponerme%20en%20contacto%20contigo."
+               target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.4A8.4 8.4 0 1 1 21 11.5Z"/></svg>
+              Escribir por WhatsApp
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+          </div>
+          <p class="card__meta">Se abrirá WhatsApp en una pestaña nueva.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Jeremy Anderson Jiménez González · Escuela Politécnica Nacional (EPN)</p>
+      <a href="#top" data-scroll-top>Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- Control y libertad: volver arriba -->
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Volver arriba" data-scroll-top>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

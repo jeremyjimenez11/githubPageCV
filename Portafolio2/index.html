@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeremy Jiménez — Portafolio de Ingeniería de Software</title>
+  <style>
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #F9FAFB;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* N1: BARRA DE PROGRESO DE SCROLL */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background-color: #374151;
+      width: 0%;
+      z-index: 1000;
+      transition: width 0.1s ease;
+    }
+
+    /* HEADER & NAVEGACIÓN */
+    .header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(249, 250, 251, 0.95);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid #E5E7EB;
+      z-index: 900;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #111827;
+      text-decoration: none;
+    }
+
+    .logo span {
+      font-weight: 400;
+      color: #6B7280;
+      font-size: 0.9rem;
+    }
+
+    .nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #4B5563;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #111827;
+      border-bottom-color: #111827;
+    }
+
+    .breadcrumb-container {
+      padding: 0.75rem 0;
+      font-size: 0.85rem;
+      color: #6B7280;
+    }
+
+    /* HERO SECTION / FOTO Y BIOGRAFÍA */
+    .section {
+      padding: 4rem 0;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-image-container {
+      flex-shrink: 0;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .hero-text {
+      flex-grow: 1;
+    }
+
+    .bg-alt {
+      background-color: #F3F4F6;
+      border-top: 1px solid #E5E7EB;
+      border-bottom: 1px solid #E5E7EB;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #E5E7EB;
+      color: #374151;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #4B5563;
+      margin-bottom: 1.25rem;
+    }
+
+    .bio {
+      color: #374151;
+      max-width: 680px;
+      margin-bottom: 1.75rem;
+    }
+
+    /* BOTONES SOBRIOS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background-color 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .btn-primary {
+      background-color: #1F2937;
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: #111827;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #374151;
+      border-color: #D1D5DB;
+      margin-left: 0.5rem;
+    }
+
+    .btn-secondary:hover {
+      background-color: #E5E7EB;
+    }
+
+    /* BOTÓN SOBRIO DE WHATSAPP */
+    .btn-whatsapp {
+      background-color: #1F2937;
+      color: #FFFFFF;
+      font-size: 1rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #111827;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-desc {
+      max-width: 580px;
+      margin: 0 auto 1.5rem auto;
+      color: #4B5563;
+      font-size: 0.95rem;
+    }
+
+    /* EXPERIENCIA (TIMELINE) */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      background: #FFFFFF;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #E5E7EB;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .timeline-header h3 {
+      font-size: 1.1rem;
+    }
+
+    .timeline-date {
+      font-size: 0.85rem;
+      color: #6B7280;
+      font-weight: 500;
+    }
+
+    /* PROYECTOS */
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-btn {
+      background: none;
+      border: 1px solid #D1D5DB;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: #4B5563;
+      cursor: pointer;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: #1F2937;
+      color: #FFFFFF;
+      border-color: #1F2937;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6B7280;
+      font-weight: 600;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin: 0.4rem 0;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #4B5563;
+    }
+
+    /* HABILIDADES */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-category h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #111827;
+      border-bottom: 1px solid #D1D5DB;
+      padding-bottom: 0.4rem;
+    }
+
+    .skill-category ul {
+      list-style: none;
+    }
+
+    .skill-category li {
+      font-size: 0.9rem;
+      color: #374151;
+      padding: 0.3rem 0;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 2rem 0;
+      border-top: 1px solid #E5E7EB;
+      font-size: 0.85rem;
+      color: #6B7280;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .back-top {
+      color: #374151;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .hero-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+      }
+      .bio {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- N1: Visibilidad del estado del sistema -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Encabezado y Navegación Principal -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#perfil" class="logo">Jeremy Jiménez <span>/ Software Eng.</span></a>
+      <nav class="nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#perfil" class="nav-link active">Perfil</a></li>
+          <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- N3: Control y libertad del usuario -->
+  <div class="container breadcrumb-container" aria-label="Ubicación en la página">
+    <span class="breadcrumb">Inicio &gt; <span id="current-section">Perfil</span></span>
+  </div>
+
+  <main>
+    <!-- HERO / SOBRE MÍ CON FOTO -->
+    <section id="perfil" class="section">
+      <div class="container hero-grid">
+        <div class="hero-image-container">
+          <img src="1000132390.jpg" alt="Fotografía profesional de Jeremy Jiménez" class="profile-img">
+        </div>
+        
+        <div class="hero-text">
+          <span class="badge">EPN — Facultad de Ingeniería de Sistemas</span>
+          <h1>Jeremy Anderson Jiménez González</h1>
+          <p class="subtitle">Estudiante de 7.º Semestre de Ingeniería en Software</p>
+          <p class="bio">
+            Desarrollador enfocado en la construcción de software bajo arquitectura MVC y patrones robustos en Java. Con experiencia aplicada en soporte técnico, metodologías ágiles y estándares de calidad de software.
+          </p>
+          <div class="cta-group">
+            <a href="#contacto" class="btn btn-primary">Contacto directo</a>
+            <a href="#proyectos" class="btn btn-secondary">Ver proyectos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA LABORAL -->
+    <section id="experiencia" class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">Experiencia y Soporte Técnico</h2>
+        
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-header">
+              <h3>Servicio Técnico y Atención a Usuarios</h3>
+              <span class="timeline-date">Facultad de Ingeniería de Sistemas (FIS - EPN)</span>
+            </div>
+            <p>Soporte técnico directo, mantenimiento correctivo/preventivo de equipos de cómputo y asistencia a usuarios en instalaciones y laboratorios de la facultad.</p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-header">
+              <h3>Servicio al Cliente y Gestión Operativa</h3>
+              <span class="timeline-date">Complejo Termales Jamanco & Negocio Familiar</span>
+            </div>
+            <p>Atención al público, resolución de requerimientos de usuarios e intermediación efectiva en entornos de alto flujo de clientes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS / PORTAFOLIO -->
+    <section id="proyectos" class="section">
+      <div class="container">
+        <h2 class="section-title">Portafolio de Proyectos</h2>
+        
+        <div class="filter-bar" role="group" aria-label="Filtrar proyectos">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="java">Java / Arquitectura</button>
+          <button class="filter-btn" data-filter="gestion">Gestión & BPMN</button>
+          <button class="filter-btn" data-filter="diseño">Diseño</button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card" data-category="java">
+            <div class="card-body">
+              <span class="card-tag">Java / Reconocimiento de Voz</span>
+              <h3>Aplicación con Comandos de Voz</h3>
+              <p>Desarrollo de un sistema ejecutable en Java habilitado para procesar comandos de voz del usuario para tareas de control y ejecución.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="java">
+            <div class="card-body">
+              <span class="card-tag">Java / Agentes</span>
+              <h3>Agente Personal en Java</h3>
+              <p>Implementación de la lógica y arquitectura para un agente de software automatizado para tareas personales.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="gestion">
+            <div class="card-body">
+              <span class="card-tag">BPMN 2.0 / PlantUML</span>
+              <h3>Gestión para Dark Kitchens</h3>
+              <p>Modelado de dominio, captura de requerimientos de software y estructuración de procesos mediante diagramación BPMN 2.0 y PlantUML.</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="gestion">
+            <div class="card-body">
+              <span class="card-tag">IEEE 828 / ISO 12207</span>
+              <h3>Gestión de Configuración (EPN Event Manager)</h3>
+              <p>Análisis y reporte técnico de mantenimiento y configuración de software alineado a estándares de calidad (IEEE, ISO/IEC, CMMI).</p>
+            </div>
+          </article>
+
+          <article class="card" data-category="diseño">
+            <div class="card-body">
+              <span class="card-tag">Diseño Multimedia</span>
+              <h3>Identidad Gráfica — Evento VOCES 2026</h3>
+              <p>Diseño de logotipos, material de difusión y piezas publicitarias para el evento institucional VOCES 2026.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">Competencias Técnicas</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Desarrollo & Lenguajes</h3>
+            <ul>
+              <li>Java (Servlets, JSP)</li>
+              <li>Arquitectura Monolítica & MVC</li>
+              <li>SQL / Bases de Datos Distribuidas</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Modelado & Estándares</h3>
+            <ul>
+              <li>PlantUML (Casos de uso, Dominio)</li>
+              <li>BPMN 2.0 (XML)</li>
+              <li>IEEE 828, ISO/IEC 12207, CMMI</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Metodologías & Herramientas</h3>
+            <ul>
+              <li>Metodologías Ágiles (Scrum)</li>
+              <li>Git / Control de Versiones</li>
+              <li>Soporte Técnico Hardware/Software</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO VÍA WHATSAPP -->
+    <section id="contacto" class="section">
+      <div class="container text-center">
+        <h2 class="section-title">Contacto Directo</h2>
+        <p class="contact-desc">
+          Si deseas comunicarte conmigo para oportunidades académicas, profesionales o proyectos, puedes enviarme un mensaje directo a través de WhatsApp.
+        </p>
+
+        <a href="https://wa.me/593912345678?text=Hola%20Jeremy,%20he%20visto%20tu%20portafolio%20y%20me%20gustaría%20contactarme%20contigo." 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.233-1.237a9.935 9.935 0 004.779 1.221h.005c5.505 0 9.988-4.478 9.989-9.985 0-2.668-1.038-5.176-2.924-7.062A9.919 9.919 0 0012.012 2zm5.836 14.168c-.246.693-1.234 1.272-1.706 1.348-.472.077-1.077.108-1.731-.102-.399-.128-.916-.297-1.581-.585-2.793-1.21-4.608-4.041-4.748-4.228-.14-.187-1.139-1.515-1.139-2.89 0-1.375.72-2.051.976-2.332.256-.281.562-.351.75-.351.187 0 .375 0 .538.008.175.008.411-.067.643.489.245.586.83 2.025.903 2.172.073.147.121.32.024.512-.097.192-.146.311-.29.482-.144.171-.303.382-.433.513-.144.145-.294.303-.126.592.168.289.748 1.234 1.603 1.996 1.099.978 2.027 1.28 2.316 1.424.289.144.457.12.625-.072.168-.192.721-.84.913-1.129.192-.289.384-.241.648-.144.264.096 1.68.792 1.968.936.288.144.48.216.552.336.072.12.072.695-.174 1.388z"/>
+          </svg>
+          Contactar por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Jeremy Anderson Jiménez González — Escuela Politécnica Nacional.</p>
+      <a href="#perfil" class="back-top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. VISIBILIDAD DEL ESTADO DEL SISTEMA
+      window.addEventListener("scroll", () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("scroll-progress").style.width = scrolled + "%";
+      });
+
+      // 2. NAVEGACIÓN Y BREADCRUMB
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const currentSectionBreadcrumb = document.getElementById("current-section");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 120) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+            if (currentSectionBreadcrumb) {
+              currentSectionBreadcrumb.textContent = link.textContent;
+            }
+          }
+        });
+      });
+
+      // 3. FILTRADO RÁPIDO DE PROYECTOS
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const projectCards = document.querySelectorAll(".card");
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.getAttribute("data-filter");
+          projectCards.forEach((card) => {
+            if (filter === "all" || card.getAttribute("data-category") === filter) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
